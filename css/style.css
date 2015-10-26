@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);@import url(https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic);@import url(bucket-ico-fonts.css);
+
+@font-face {
+    font-family: 'pacificoregular';
+    src: url('fonts/pacifico-webfont.eot');
+    src: url('fonts/pacifico-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/pacifico-webfont.woff2') format('woff2'),
+         url('fonts/pacifico-webfont.woff') format('woff'),
+         url('fonts/pacifico-webfont.ttf') format('truetype'),
+         url('pacifico-webfont.svg#pacificoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+background-color: #333333;
+font-family: 'Open Sans',sans-serif;
+font-size: 13px;
+}
+::selection {
+background: #1FB5AD;
+color: #fff;
+}
+ul li {
+list-style: none;
+}
+.event-close {
+display: inline-block;
+font-size: 15px;
+color: #fff;
+position: absolute;
+right: 10px;
+top: 8px;
+}
+a, a:hover, a:focus {
+text-decoration: none;
+outline: none;
+}
+.event-list-block {
+background: #1fb5ac;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+min-height: 474px;
+margin-bottom: 50px;
+margin-top: 50px;
+}
+
+.navbar-brand {
+	font-family: 'pacificoregular', Arial, sans-serif;
+	font-size: 2em;
+}
+
+.todo{
+	background: #A975BF;
+}
+
+.doing{
+	background: #75A8BF;
+}
+
+.done{
+	background: #75BFB5;
+}
+
+.listitem {
+background: rgba(255,255,255,.2);
+padding: 10px 30px 10px 10px;
+color: #fff;
+margin-bottom: 5px;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+position: relative;
+}
+
+.cal-day {
+font-size: 30px;
+font-weight: 300;
+text-transform: uppercase;
+color: #fff;
+padding-top: 15px;
+padding-bottom: 30px;
+}
+.cal-day span {
+font-size: 14px;
+display: block;
+}
+
+.evnt-input, .evnt-input:focus {
+background: none;
+border: none;
+border-bottom: #fff 1px solid;
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+color: #fff;
+padding-left: 0px;
+margin-top: 10px;
+}
+
+.evnt-input:-moz-placeholder{color:#fff!important;font-size:12px;}
+.evnt-input::-moz-placeholder{color:#fff!important;font-size:12px;}
+.evnt-input:placeholder{color:#fff!important;font-size:12px;}
+.evnt-input::-webkit-input-placeholder{color:#fff!important;font-size:12px;}
+
+input {
+outline: none!important;
+}
+
+.form-control {
+box-shadow: none;
+}
