@@ -11,7 +11,7 @@
  * DB_USER: user for your database. the user needs to have rights for SELECT, UPDATE, DELETE and INSERT.
  * DB_PASS: the password of the above user
  */
-define("DB_HOST", "localhost");
+define("DB_HOST", "database.cloudr.space");
 define("DB_NAME", "tododoingdone");
 define("DB_USER", "root");
-define("DB_PASS", "");
+define("DB_PASS", "r9zz75nbb6ueg66r");
