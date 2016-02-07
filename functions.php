@@ -1,7 +1,7 @@
 <?php
 require_once("config/db.php");
 if(!isset($_SESSION)){session_start();}
-$db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 if ($db_connection->connect_errno)
 {
 	$output = array('status'=>'error','type'=>'db connection error'); ;
