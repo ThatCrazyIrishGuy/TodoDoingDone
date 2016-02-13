@@ -1,0 +1,179 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.10.7
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Oct 26, 2015 at 12:42 PM
+-- Server version: 5.5.42-cll-lve
+-- PHP Version: 5.4.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `tododoingdone`
+--
+CREATE DATABASE IF NOT EXISTS `tododoingdone` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `tododoingdone`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `collaborator`
+--
+
+DROP TABLE IF EXISTS `collaborator`;
+CREATE TABLE IF NOT EXISTS `collaborator` (
+  `project_id` int(11) NOT NULL,
+  `user_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  KEY `project_id` (`project_id`),
+  KEY `user_name` (`user_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notes`
+--
+
+DROP TABLE IF EXISTS `notes`;
+CREATE TABLE IF NOT EXISTS `notes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `project_id` int(11) NOT NULL,
+  `description` varchar(250) NOT NULL,
+  `status` varchar(5) NOT NULL DEFAULT 'TODO',
+  PRIMARY KEY (`id`),
+  KEY `status` (`status`),
+  KEY `project id` (`project_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=65 ;
+
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`id`, `project_id`, `description`, `status`) VALUES
+(1, 1, 'new project functionality', 'done'),
+(2, 1, 'delete project functionality', 'done'),
+(3, 1, 'change project functionality', 'done'),
+(5, 1, 'ajaxify page switches by swapping data out', 'done'),
+(6, 1, 'search functionality', 'done'),
+(7, 1, 'do some alpha testing', 'doing'),
+(8, 1, 'input sanitization for db', 'todo'),
+(11, 1, 'sync with db by checking of updates', 'todo'),
+(12, 1, 'prevent duplicate project names', 'todo'),
+(30, 37, 'When new item added and stock quantity left empty, do not track stock', 'done'),
+(32, 38, 'help?', 'todo'),
+(34, 40, 'this is a test note', 'todo'),
+(35, 40, 'the greatest note in the the world', 'doing'),
+(36, 40, 'not just a tribute', 'done'),
+(38, 37, 'when transaction with more than amount amount in stock, still empty stock of what is left', 'doing'),
+(40, 43, 'https://github.com/db0company/css-hexagon/', 'todo'),
+(42, 43, 'main search page', 'todo'),
+(43, 43, 'calendar page', 'todo'),
+(44, 43, 'search results page', 'todo'),
+(45, 43, 'take calendar from pages template', 'todo'),
+(51, 44, 'login with github', 'done'),
+(52, 44, 'frontend container management', 'todo'),
+(53, 44, 'redeploy functionality', 'done'),
+(54, 44, 'remove functionality', 'done'),
+(55, 44, 'git integration with OAuth token', 'done'),
+(56, 44, 'add support for start file alternate names in node containers', 'todo'),
+(57, 45, 'Nothing', 'done'),
+(58, 45, 'Nothing ', 'doing'),
+(59, 45, 'Learn about buffer swaps', 'todo'),
+(60, 44, 'git clone https://@github.com/owner/repo.git for token clone', 'done'),
+(61, 44, 'mysql cookie manager storing github token', 'done'),
+(62, 44, 'drop php and use node for authentication', 'done'),
+(64, 44, 'The container uses display: table; and each â€œcardâ€ is display: table-cell; making it have table properties (aka, equal column heights).', 'todo');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `project`
+--
+
+DROP TABLE IF EXISTS `project`;
+CREATE TABLE IF NOT EXISTS `project` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT 'default',
+  `user_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user id` (`user_name`),
+  KEY `user_name` (`user_name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=46 ;
+
+--
+-- Dumping data for table `project`
+--
+
+INSERT INTO `project` (`id`, `name`, `user_name`) VALUES
+(1, 'Todo Doing Done', 'darrenbritton'),
+(36, 'default', 'darrenbritton'),
+(37, 'Declans Bookshop POS', 'darrenbritton'),
+(38, 'default', 'test'),
+(39, 'space', 'test'),
+(40, 'default', 'testing'),
+(41, 'ByteMenu', 'darrenbritton'),
+(43, 'SkillsBank', 'darrenbritton'),
+(44, 'cloudr', 'darrenbritton'),
+(45, 'default', 'Immzer');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index',
+  `user_name` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s name, unique',
+  `user_password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s password in salted and hashed format',
+  `user_email` varchar(64) COLLATE utf8_unicode_ci NOT NULL COMMENT 'user''s email, unique',
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_name` (`user_name`),
+  UNIQUE KEY `user_email` (`user_email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data' AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `user_name`, `user_password_hash`, `user_email`) VALUES
+(1, 'darrenbritton', '$2y$10$xY7cnt1qDCuX9DpUMSKOEO583qpM4a1l0KIfYRly.uUSnT6tMwifS', 'darrenbritton@hotmail.com'),
+(2, 'test', '$2y$10$.OMjyFkba0KN5WKSeVLNW.tX7mizM1DbVFCYMGQ04kPUPeufZ6qG6', 'test@test.com'),
+(3, 'testing', '$2y$10$YpigDJFkl5Y7Agysb4vQcuRXMflIJAAFgmYnTlCTtf1fsnUfxwF0y', 'testing@testing.com'),
+(4, 'Immzer', '$2y$10$O9T4JUIJVp2XFwijS8VGqeVMNaKKG63XWrx.UXhG2IpSV0UP7t9EK', 'immy.onpriya@gmail.com');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `collaborator`
+--
+ALTER TABLE `collaborator`
+  ADD CONSTRAINT `collab_project_id_fk` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `collab_user_name_fk` FOREIGN KEY (`user_name`) REFERENCES `users` (`user_name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `notes`
+--
+ALTER TABLE `notes`
+  ADD CONSTRAINT `notes_project_id_fk` FOREIGN KEY (`project_id`) REFERENCES `project` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `project`
+--
+ALTER TABLE `project`
+  ADD CONSTRAINT `project_user_name_fk` FOREIGN KEY (`user_name`) REFERENCES `users` (`user_name`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
