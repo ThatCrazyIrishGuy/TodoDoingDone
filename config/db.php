@@ -11,8 +11,8 @@
  * DB_USER: user for your database. the user needs to have rights for SELECT, UPDATE, DELETE and INSERT.
  * DB_PASS: the password of the above user
  */
-define("DB_HOST", "database.cloudr.space");
+define("DB_HOST", getenv('MYSQL_PORT_3306_TCP_ADDR'));
 define("DB_NAME", "tododoingdone");
-define("DB_PORT", "49320");
+define("DB_PORT", getenv('MYSQL_PORT_3306_TCP_PORT'));
 define("DB_USER", "root");
-define("DB_PASS", "r9zz75nbb6ueg66r");
+define("DB_PASS", getenv('MYSQL_ENV_MYSQL_ROOT_PASSWORD'));
