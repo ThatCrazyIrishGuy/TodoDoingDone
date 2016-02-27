@@ -1,0 +1,10 @@
+{
+
+    "tests": [
+        {
+        	"name": "full test",
+        	"description": "tests login, change project functionality and logs out again",
+            "test-id": "56ccff68625aee4d5d2009e8"
+        }
+    ]
+}
