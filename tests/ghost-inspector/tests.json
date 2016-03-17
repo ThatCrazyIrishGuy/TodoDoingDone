@@ -5,6 +5,11 @@
         	"name": "full test",
         	"description": "tests login, change project functionality and logs out again",
             "test-id": "56ccff68625aee4d5d2009e8"
+        },
+        {
+        	"name": "login",
+        	"description": "tests login only",
+            "test-id": "56d660691a6744a446a03b3d"
         }
     ]
 }
