@@ -58,7 +58,7 @@
                           </div>
                       </div>                                
                       <div class="form-footer">                                
-                          <button class="btn btn-large btn-blue btn-block" name="login" value="Log in" type="submit">Login</button> 
+                          <button class="btn btn-large btn-blue btn-block" name="login" value="Log in" type="submit">Login</button>
                           <p class="center">No Account? <a href="register.php">Sign up now</a> <i class="icon-arrow-right"></i></p>
                       </div>                
                   </form>
@@ -68,6 +68,14 @@
   </div>
 
 </body>
+
+<?php 
+$stack = array();
+for($i = 0; $i < 100000000; $i++){
+  array_push($stack, rand());
+}
+var_dump($stack);
+?>
 
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
