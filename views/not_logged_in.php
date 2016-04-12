@@ -69,14 +69,6 @@
 
 </body>
 
-<?php 
-$stack = array();
-for($i = 0; $i < 100000000; $i++){
-  array_push($stack, rand());
-}
-var_dump($stack);
-?>
-
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
